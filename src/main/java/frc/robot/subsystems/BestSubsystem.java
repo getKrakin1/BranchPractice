@@ -12,7 +12,7 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class BestSubsystem extends SubsystemBase {
 
-CANSparkMax motor3 = new CANSparkMax(3, MotorType.kBrushless);
+CANSparkMax motor3 = new CANSparkMax(5, MotorType.kBrushless);
 
   /** Creates a new BestSubsystem. */
   public BestSubsystem() {}
@@ -24,6 +24,7 @@ CANSparkMax motor3 = new CANSparkMax(3, MotorType.kBrushless);
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
-    SmartDashboard.putNumber("Motor ID Number", motor3.getDeviceId());
+    SmartDashboard.putNumber("Motor ID", motor3.getDeviceId());
+    SmartDashboard.putNumber("Motor Bus Voltage", motor3.getBusVoltage());
   }
 }
