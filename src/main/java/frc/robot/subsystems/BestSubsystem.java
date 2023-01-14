@@ -7,21 +7,24 @@ package frc.robot.subsystems;
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class BestSubsystem extends SubsystemBase {
 
-CANSparkMax motor2 = new CANSparkMax(1, MotorType.kBrushless);
+CANSparkMax motor3 = new CANSparkMax(3, MotorType.kBrushless);
 
   /** Creates a new BestSubsystem. */
   public BestSubsystem() {}
 
   public void setCurrentLimit() {
-    motor2.setSmartCurrentLimit(100);
+    motor3.setSmartCurrentLimit(100);
+    motor3.burnFlash();
   }
 
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
+    SmartDashboard.putNumber("Motor ID", motor3.getDeviceId());
   }
 }
