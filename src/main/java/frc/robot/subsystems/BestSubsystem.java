@@ -18,13 +18,12 @@ CANSparkMax motor3 = new CANSparkMax(3, MotorType.kBrushless);
   public BestSubsystem() {}
 
   public void setCurrentLimit() {
-    motor3.setSmartCurrentLimit(100);
-    motor3.burnFlash();
+    motor3.setSmartCurrentLimit(40);
   }
 
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
-    SmartDashboard.putNumber("Motor ID", motor3.getDeviceId());
+    SmartDashboard.putNumber("Motor ID Number", motor3.getDeviceId());
   }
 }
