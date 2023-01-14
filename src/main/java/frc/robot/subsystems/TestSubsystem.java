@@ -12,7 +12,8 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class TestSubsystem extends SubsystemBase {
 
-  CANSparkMax motor1 = new CANSparkMax(0, MotorType.kBrushless);
+  CANSparkMax motor1 = new CANSparkMax(1, MotorType.kBrushless);
+  CANSparkMax motor2 = new CANSparkMax(2, MotorType.kBrushless);
 
   /** Creates a new TestSubsystem. */
   public TestSubsystem() {}
@@ -20,6 +21,8 @@ public class TestSubsystem extends SubsystemBase {
   public void runMotor() {
     if (motor1.isFollower()) {
       motor1.set(0.5);
+    } else {
+      motor1.follow(motor2);
     }
   }
 
